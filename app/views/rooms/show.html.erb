@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between">
+    <span class="fs-3">
+        <%= @room.name %>
+    </span>
+    <span class="small text-muted">
+    [<%= link_to "Edit", edit_room_path(@room.id) %>]
+    [<%= link_to "Delete", @room, data: {
+        turbo_method: :delete,
+        turbo_confim: "Are you sure?"
+    } %>]
+
+    </span>
+</div>
+
+<p>Capacity: <%= @room.capacity %></p>

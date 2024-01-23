@@ -1,0 +1,16 @@
+
+<div class="row mt-4">
+    <div class="offset-md-3 col-12 col-md-6">
+        <div class="border-bottom d-flex justify-content-between align-items-center mb-4 pb-2">
+            <h4>rooms: <%= @rooms.count %></h4>
+            <%= link_to "Create new Room", new_room_path, class: "btn btn-primary" %>
+        </div>
+        
+
+        <% @rooms.each do |room| %>
+            <p class="mb-3 border-bottom">
+                <%= link_to room.name, room_path(room.id)%>
+            </p>
+        <% end %>
+    </div>
+</div>
