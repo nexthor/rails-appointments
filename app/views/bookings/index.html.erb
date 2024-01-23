@@ -1,0 +1,15 @@
+
+<div class="row mt-4">
+    <div class="offset-md-3 col-12 col-md-6">
+        <div class="border-bottom d-flex justify-content-between align-items-center mb-4 pb-2">
+            <h4>Bookings: <%= @bookings.count %></h4>
+            <%= link_to "Create new Booking", new_booking_path, class: "btn btn-primary" %>
+        </div>
+        
+        <% @bookings.each do |booking| %>
+            <p class="mb-3 border-bottom">
+                <%= link_to booking.purpose, booking_path(booking.id)%>
+            </p>
+        <% end %>
+    </div>
+</div>
